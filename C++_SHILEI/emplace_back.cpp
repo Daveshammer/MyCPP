@@ -88,12 +88,12 @@ int main()
     // std::vector<Test> v;
     vector<Test, MyAllocator<Test>> v;
     v.reserve(100); // 先开辟100个空间
-    cout << "----------------" << endl;
+    cout << "end----------------" << endl;
 
     // 直接插入对象，两个没有区别
     v.push_back(t1); // Test(const Test &)
     v.emplace_back(t1); // Test(const Test &)
-    cout << "----------------" << endl;
+    cout << "end----------------" << endl;
     /*
     Test(int) // 临时对象
     Test(Test &&) // 移动构造
@@ -101,11 +101,12 @@ int main()
     */
     v.push_back(Test(20));
     v.emplace_back(Test(20));
-    cout << "----------------" << endl;
+    cout << "end----------------" << endl;
 
     v.push_back(20); // Test(int)和Test(Test &&)
-    v.emplace_back(30); // Test(int)
     cout << "----------------" << endl;
+    v.emplace_back(30); // Test(int)
+    cout << "end----------------" << endl;
 
 #endif
  

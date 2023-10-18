@@ -21,7 +21,7 @@ public:
             strcpy(_pstr, str);
         }
     }
-    CMyString(const CMyString &other)
+    CMyString(const CMyString& other)
     {
         cout << "CMyString(const CMyString &other)" << endl;
         int len = strlen(other._pstr);
@@ -36,9 +36,9 @@ public:
         other._pstr = nullptr;
     }
 
-    CMyString &operator=(const CMyString &other)
+    CMyString& operator=(const CMyString& other)
     {
-        cout << "CMyString &operator=(const CMyString &other)" << endl;
+        cout << "CMyString& operator=(const CMyString &other)" << endl;
         if (this != &other)
         {
             delete[] _pstr;
@@ -48,9 +48,9 @@ public:
         }
         return *this;
     }
-    CMyString &operator=(CMyString &&other)
+    CMyString& operator=(CMyString&& other)
     {
-        cout << "CMyString &operator=(const CMyString &&other)" << endl;
+        cout << "CMyString& operator=(const CMyString &&other)" << endl;
         if (this != &other)
         {
             delete[] _pstr;
@@ -70,8 +70,8 @@ public:
 private:
     char *_pstr;
 
-    friend CMyString operator+(const CMyString &str1, const CMyString &str2);
-    friend ostream &operator<<(ostream &os, const CMyString &str);
+    friend CMyString operator+(const CMyString& str1, const CMyString& str2);
+    friend ostream &operator<<(ostream& os, const CMyString& str);
 };
 
 CMyString GetString(CMyString &str)
@@ -80,7 +80,7 @@ CMyString GetString(CMyString &str)
     return CMyString(pstr);
 }
 
-CMyString operator+(const CMyString &str1, const CMyString &str2)
+CMyString operator+(const CMyString& str1, const CMyString& str2)
 {
     int len = strlen(str1.c_str()) + strlen(str2.c_str());
     // char *pstr = new char[len + 1];
@@ -96,7 +96,7 @@ CMyString operator+(const CMyString &str1, const CMyString &str2)
     strcat(tmpStr._pstr, str2.c_str());
     return tmpStr;
 }
-ostream &operator<<(ostream &os, const CMyString &str)
+ostream& operator<<(ostream& os, const CMyString& str)
 {
     os << str.c_str();
     return os;
@@ -128,9 +128,9 @@ int main()
     vec.reserve(10);
 
     CMyString str1 = "aaa"; // CMyString(const char *)
-    vec.push_back(str1); // CMyString(const CMyString &other)
+    vec.push_back(str1); // CMyString(const CMyString& other)
 
-    vec.push_back(CMyString("bbb")); // CMyString(const char *) 和 CMyString(CMyString &&other)
+    vec.push_back(CMyString("bbb")); // CMyString(const char *) 和 CMyString(CMyString&& other)
     
 
 #endif

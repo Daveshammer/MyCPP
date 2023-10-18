@@ -13,7 +13,7 @@ public:
         : _mreal(c._mreal), _mimage(c._mimage)
     {
     }
-    CComplex &operator=(const CComplex &c)
+    CComplex& operator=(const CComplex &c)
     {
         if (this != &c)
         {
@@ -37,7 +37,7 @@ public:
         // return tmp;
         return CComplex(_mreal++, _mimage++); //少了tmp对象的构造和析构
     }
-    CComplex &operator++()
+    CComplex& operator++()
     {
         ++_mreal;
         ++_mimage;

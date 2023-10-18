@@ -2,6 +2,7 @@
 #include <arpa/inet.h>
 #include <sys/socket.h>
 #include <unistd.h>
+#include <string.h>
 
 int main()
 {
@@ -17,7 +18,7 @@ int main()
     if (ret < 0)
     {
         perror("");
-        exit(0);
+        // exit(0);
     }
     // 监听
     listen(lfd, 128);
@@ -32,7 +33,8 @@ int main()
     char buf[1024];
     while (1)
     {
-        bzero(buf, sizeof(buf));
+        // bzero(buf, sizeof(buf));
+        memset(buf, 0, sizeof(buf));
         int n = 0;
         n = read(cfd, buf, sizeof(buf));
         if (n == 0) // 客户端关闭

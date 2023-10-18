@@ -58,7 +58,7 @@ private:
 
 void producer(Queue *que)
 {
-    for (int i = 0; i < 1000; ++i)
+    for (int i = 0; i < 100; ++i)
     {
         que->put(i);
         // this_thread::sleep_for(chrono::milliseconds(100));
@@ -66,7 +66,7 @@ void producer(Queue *que)
 }
 void consumer(Queue *que)
 {
-    for (int i = 0; i < 1000; ++i)
+    for (int i = 0; i < 100; ++i)
     {
         que->get();
         // this_thread::sleep_for(chrono::milliseconds(100));

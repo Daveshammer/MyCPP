@@ -20,7 +20,7 @@ public:
         00007FF7AEEC201D  mov         qword ptr [rax],rcx   // vfptr <- vftable
         */
         cout << "Base()" << endl;
-        clear();
+        // clear();
     }
     virtual ~Base() { cout << "~Base()" << endl; }
 
@@ -32,7 +32,7 @@ class Derive : public Base
 public:
     Derive() { cout << "Derive()" << endl; }
     ~Derive() { cout << "~Derive()" << endl; }
-
+private:
     void show() { cout << "Derive::show()" << endl; }
 };
 
@@ -44,7 +44,7 @@ int main()
     delete pb;
 
     Base *pb2 = new Derive();
-    pb2->show();
+    pb2->show(); // Derive::show() 访问权限只是在编译阶段进行检查
     delete pb2;
 
     return 0;
