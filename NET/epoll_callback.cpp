@@ -34,7 +34,8 @@ void register_stdin(int epoll_fd)
 {
     struct epoll_event event;
     event.events = EPOLLIN;
-    event.data.fd = STDIN_FILENO;
+    // event.data.fd = STDIN_FILENO;
+    event.data.ptr = reinterpret_cast<void*>(handle_stdin);
 
     if (epoll_ctl(epoll_fd, EPOLL_CTL_ADD, STDIN_FILENO, &event) == -1)
     {
@@ -62,7 +63,8 @@ void register_timer(int epoll_fd, int second)
 
     struct epoll_event event;
     event.events = EPOLLIN;
-    event.data.fd = timer_fd;
+    // event.data.fd = timer_fd;
+    event.data.ptr = reinterpret_cast<void*>(handle_timer);
 
     struct itimerspec timer;
     timer.it_interval = second_to_timespec(second);
@@ -99,16 +101,21 @@ int main()
             exit(EXIT_FAILURE);
         }
 
+        // for (int i = 0; i < n; i ++)
+        // {
+        //     if (events[i].data.fd == STDIN_FILENO)
+        //     {
+        //         handle_stdin();
+        //     }
+        //     else if (events[i].data.fd == timer_fd)
+        //     {
+        //         handle_timer();
+        //     }
+        // }
         for (int i = 0; i < n; i ++)
         {
-            if (events[i].data.fd == STDIN_FILENO)
-            {
-                handle_stdin();
-            }
-            else if (events[i].data.fd == timer_fd)
-            {
-                handle_timer();
-            }
+            void (*callback)(void) = reinterpret_cast<void (*)(void)>(events[i].data.ptr);
+            callback();
         }
     }
 }
