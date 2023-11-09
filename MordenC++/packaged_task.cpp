@@ -39,7 +39,7 @@ void test3()
     if (t.joinable()) t.join();
 }
 
-
+// async ≈ thread + packaged_task
 // future不能拷贝，只能移动，这就意味着只能有一个线程一个实例可以通过get()拿到对应的结果
 // 如果想要多个线程多个实例拿到结果，可以通过future的share()可拿到shared_future
 void test4()

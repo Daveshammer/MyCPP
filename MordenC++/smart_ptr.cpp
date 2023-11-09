@@ -1,4 +1,4 @@
-#include <cstdio> 
+#include <cstdio>
 #include <utility> // std::swap
 class shared_count
 {
@@ -69,8 +69,7 @@ public:
         }
     }
     template <typename U>
-    smart_ptr(const smart_ptr<U> &other,
-              T *ptr) noexcept
+    smart_ptr(const smart_ptr<U> &other, T *ptr) noexcept
     {
         ptr_ = ptr;
         if (ptr_)
@@ -80,8 +79,7 @@ public:
             shared_count_ = other.shared_count_;
         }
     }
-    smart_ptr &
-    operator=(smart_ptr rhs) noexcept
+    smart_ptr& operator=(smart_ptr rhs) noexcept
     {
         rhs.swap(*this);
         return *this;
@@ -102,18 +100,18 @@ public:
             return 0;
         }
     }
-    void swap(smart_ptr &rhs) noexcept
+    void swap(smart_ptr& rhs) noexcept
     {
         using std::swap;
         swap(ptr_, rhs.ptr_);
         swap(shared_count_,
              rhs.shared_count_);
     }
-    T &operator*() const noexcept
+    T& operator*() const noexcept
     {
         return *ptr_;
     }
-    T *operator->() const noexcept
+    T* operator->() const noexcept
     {
         return ptr_;
     }
@@ -127,8 +125,7 @@ private:
     shared_count *shared_count_;
 };
 template <typename T>
-void swap(smart_ptr<T> &lhs,
-          smart_ptr<T> &rhs) noexcept
+void swap(smart_ptr<T> &lhs, smart_ptr<T> &rhs) noexcept
 {
     lhs.swap(rhs);
 }
