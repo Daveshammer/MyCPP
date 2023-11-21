@@ -21,7 +21,7 @@ public:
             strcpy(_pstr, str);
         }
     }
-    CMyString(const CMyString& other)
+    CMyString(const CMyString &other)
     {
         cout << "CMyString(const CMyString &other)" << endl;
         int len = strlen(other._pstr);
@@ -36,7 +36,7 @@ public:
         other._pstr = nullptr;
     }
 
-    CMyString& operator=(const CMyString& other)
+    CMyString& operator=(const CMyString &other)
     {
         cout << "CMyString& operator=(const CMyString &other)" << endl;
         if (this != &other)
@@ -48,7 +48,7 @@ public:
         }
         return *this;
     }
-    CMyString& operator=(CMyString&& other)
+    CMyString& operator=(CMyString &&other)
     {
         cout << "CMyString& operator=(const CMyString &&other)" << endl;
         if (this != &other)
@@ -70,7 +70,7 @@ public:
 private:
     char *_pstr;
 
-    friend CMyString operator+(const CMyString& str1, const CMyString& str2);
+    friend CMyString operator+(const CMyString &str1, const CMyString &str2);
     friend ostream &operator<<(ostream& os, const CMyString& str);
 };
 
@@ -80,7 +80,7 @@ CMyString GetString(CMyString &str)
     return CMyString(pstr);
 }
 
-CMyString operator+(const CMyString& str1, const CMyString& str2)
+CMyString operator+(const CMyString &str1, const CMyString &str2)
 {
     int len = strlen(str1.c_str()) + strlen(str2.c_str());
     // char *pstr = new char[len + 1];
