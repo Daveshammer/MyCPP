@@ -16,7 +16,7 @@ void func1(shared_ptr<Base>& sp) { // 传递引用不会增加引用计数
     sp->num++;
 }
 
-void func2(shared_ptr<Base> sp) { // 传递引用不会增加引用计数
+void func2(shared_ptr<Base> sp) { // 传值会增加引用计数
     cout << "func2 num: " << sp->num << " count: " << sp.use_count() << endl;
     sp->num++;
 }
