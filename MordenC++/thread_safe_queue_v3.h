@@ -21,8 +21,10 @@ class Queue
 private:
     struct node
     {
+        // 使用了unique_ptr管理next_指针，那么析构的时候会自动完成;如果队列中的数据量大的话（大概1e4），整个函数栈会爆掉
+        // 这个问题可以通过对节点逐个进行析构来解决
         T data_;
-        std::unique_ptr <node> next_; // 使用了unique_ptr管理next_指针，那么析构的时候会自动完成;如果队列中的数据量大的话（大概1e4），整个函数栈会爆掉
+        std::unique_ptr <node> next_; 
 
         node(T data) : data_(std::move(data))
         {}

@@ -20,7 +20,9 @@ private:
     struct node
     {
         shared_ptr<T> data_;
-        unique_ptr<node> next_;
+        // 使用了unique_ptr管理next_指针，那么析构的时候会自动完成;如果队列中的数据量大的话（大概1e4），整个函数栈会爆掉
+        // 这个问题可以通过对节点逐个进行析构来解决
+        unique_ptr<node> next_; 
     };
     condition_variable m_cond;
     mutex m_headMtx;
@@ -31,6 +33,14 @@ private:
 public:
     ThreadSafeQueue() : m_head(new node), m_tail(m_head.get())
     {
+    }
+    ~ThreadSafeQueue()
+    {
+        while (m_head)
+        {
+            unique_ptr<node> next = std::move(m_head->next_);
+            m_head = std::move(next);
+        }
     }
 
     ThreadSafeQueue(ThreadSafeQueue const &) = delete;
@@ -55,7 +65,7 @@ public:
     std::shared_ptr<T> WaitAndPop()
     {
         std::unique_ptr<node> const old_head = wait_pop_head();
-        return old_head->data;
+        return old_head->data_;
     }
 
     void WaitAndPop(T &value)
@@ -72,7 +82,7 @@ public:
     bool TryPop(T &value)
     {
         std::unique_ptr<node> const old_head = try_pop_head(value);
-        return old_head;
+        return old_head ? true : false;
     }
 
     void Empty()
