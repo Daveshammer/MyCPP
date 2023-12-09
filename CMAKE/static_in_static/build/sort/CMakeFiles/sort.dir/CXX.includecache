@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/calc.h
+
+../include/sort.h
+
+/home/djf/MyCPP/CMAKE/static_in_static/sort/select_sort.cpp
+iostream
+-
+sort.h
+/home/djf/MyCPP/CMAKE/static_in_static/sort/sort.h
+calc.h
+/home/djf/MyCPP/CMAKE/static_in_static/sort/calc.h
+

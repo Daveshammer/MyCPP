@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/app1.dir/test_calc.cpp.o  -o ../../bin/app1  -L/home/djf/MyCPP/CMAKE/muti_cmake/lib -Wl,-rpath,/home/djf/MyCPP/CMAKE/muti_cmake/lib ../../lib/libcalc.a 

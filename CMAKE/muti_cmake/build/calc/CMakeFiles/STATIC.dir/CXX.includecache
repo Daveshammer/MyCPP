@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/calc.h
+
+/home/djf/MyCPP/CMAKE/muti_cmake/calc/add.cpp
+iostream
+-
+calc.h
+/home/djf/MyCPP/CMAKE/muti_cmake/calc/calc.h
+
+/home/djf/MyCPP/CMAKE/muti_cmake/calc/div.cpp
+iostream
+-
+calc.h
+/home/djf/MyCPP/CMAKE/muti_cmake/calc/calc.h
+
+/home/djf/MyCPP/CMAKE/muti_cmake/calc/mult.cpp
+iostream
+-
+calc.h
+/home/djf/MyCPP/CMAKE/muti_cmake/calc/calc.h
+
+/home/djf/MyCPP/CMAKE/muti_cmake/calc/sub.cpp
+iostream
+-
+calc.h
+/home/djf/MyCPP/CMAKE/muti_cmake/calc/calc.h
+

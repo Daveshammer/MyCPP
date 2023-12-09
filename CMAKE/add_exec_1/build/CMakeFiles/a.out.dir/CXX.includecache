@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/djf/MyCPP/CMAKE/V1/add.cpp
+iostream
+-
+head.h
+/home/djf/MyCPP/CMAKE/V1/head.h
+
+/home/djf/MyCPP/CMAKE/V1/div.cpp
+iostream
+-
+head.h
+/home/djf/MyCPP/CMAKE/V1/head.h
+
+/home/djf/MyCPP/CMAKE/V1/head.h
+
+/home/djf/MyCPP/CMAKE/V1/main.cpp
+iostream
+-
+head.h
+/home/djf/MyCPP/CMAKE/V1/head.h
+
+/home/djf/MyCPP/CMAKE/V1/mult.cpp
+iostream
+-
+head.h
+/home/djf/MyCPP/CMAKE/V1/head.h
+
+/home/djf/MyCPP/CMAKE/V1/sub.cpp
+iostream
+-
+head.h
+/home/djf/MyCPP/CMAKE/V1/head.h
+

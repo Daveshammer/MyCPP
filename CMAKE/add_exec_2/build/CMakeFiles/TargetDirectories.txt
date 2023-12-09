@@ -1,0 +1,3 @@
+/home/djf/MyCPP/CMAKE/V2/build/CMakeFiles/rebuild_cache.dir
+/home/djf/MyCPP/CMAKE/V2/build/CMakeFiles/a.out.dir
+/home/djf/MyCPP/CMAKE/V2/build/CMakeFiles/edit_cache.dir

@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/a.out.dir/main.cpp.o  -o ../bin/a.out  -L/home/djf/MyCPP/CMAKE/use_library/lib_shared -Wl,-rpath,/home/djf/MyCPP/CMAKE/use_library/lib_shared -lcalc 
