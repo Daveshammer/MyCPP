@@ -5,7 +5,7 @@
 #include <algorithm>
 typedef std::function<void()> FP;
 
-// this捕获陷阱
+// this 捕获陷阱
 
 class Point
 {
