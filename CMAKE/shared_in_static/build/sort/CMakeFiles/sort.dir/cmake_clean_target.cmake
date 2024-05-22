@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "libsort.a"
+  "/home/djf/MyCPP/CMAKE/shared_in_static/lib/libsort.a"
 )

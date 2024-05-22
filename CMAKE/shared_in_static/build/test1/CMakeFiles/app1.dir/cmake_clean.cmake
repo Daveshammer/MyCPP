@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
+  "/home/djf/MyCPP/CMAKE/shared_in_static/bin/app1"
+  "/home/djf/MyCPP/CMAKE/shared_in_static/bin/app1.pdb"
   "CMakeFiles/app1.dir/test_sort.cpp.o"
-  "../../bin/app1.pdb"
-  "../../bin/app1"
+  "CMakeFiles/app1.dir/test_sort.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.
