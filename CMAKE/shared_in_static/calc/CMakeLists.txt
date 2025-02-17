@@ -4,6 +4,6 @@ project(clac)
 # 搜索源文件
 aux_source_directory(./ SRC)
 include_directories(${HEADPATH})
-# 设置静态库生成目录
+# 设置库生成目录
 set(LIBRARY_OUTPUT_PATH ${LIBPATH})
 add_library(${CALCLIB} SHARED ${SRC})

@@ -9,3 +9,4 @@ set(LIBRARY_OUTPUT_PATH ${LIBPATH})
 link_directories(${LIBPATH})
 # 链接CALCLIB
 add_library(${SORTLIB} STATIC ${SRC})
+target_link_libraries(${SORTLIB} ${CALCLIB})
