@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/a.out.dir/src/add.cpp.o CMakeFiles/a.out.dir/src/div.cpp.o CMakeFiles/a.out.dir/src/main.cpp.o CMakeFiles/a.out.dir/src/mult.cpp.o CMakeFiles/a.out.dir/src/sub.cpp.o  -o ../bin/a.out 

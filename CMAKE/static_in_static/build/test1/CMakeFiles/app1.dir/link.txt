@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/app1.dir/test_sort.cpp.o  -o ../../bin/app1  -L/home/djf/MyCPP/CMAKE/static_in_static/lib -Wl,-rpath,/home/djf/MyCPP/CMAKE/static_in_static/lib ../../lib/libsort.a ../../lib/libcalc.a 

@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/app2.dir/test_sort.cpp.o  -o ../../bin/app2  -L/home/djf/MyCPP/CMAKE/muti_cmake/lib -Wl,-rpath,/home/djf/MyCPP/CMAKE/muti_cmake/lib ../../lib/libsort.a 

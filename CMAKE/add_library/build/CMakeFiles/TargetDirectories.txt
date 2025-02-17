@@ -1,3 +1,0 @@
-/home/djf/MyCPP/CMAKE/library/build/CMakeFiles/rebuild_cache.dir
-/home/djf/MyCPP/CMAKE/library/build/CMakeFiles/calc.dir
-/home/djf/MyCPP/CMAKE/library/build/CMakeFiles/edit_cache.dir
