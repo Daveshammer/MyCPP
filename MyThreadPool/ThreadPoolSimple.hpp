@@ -81,10 +81,14 @@ private:
                     std::unique_lock<std::mutex> lock(m_pool->m_conditional_mutex);
 
                     // 如果任务队列为空，阻塞当前线程
-                    if (m_pool->m_queue.empty())
-                    {
-                        m_pool->m_conditional_lock.wait(lock); // 等待条件变量通知，开启线程
-                    }
+                    m_pool->m_conditional_lock.wait(lock, [this]() {
+                        return !m_pool->m_queue.empty() || m_pool->m_shutdown; // Avoid false awakenings
+                    });
+                    // 如果线程池关闭且队列为空，直接退出
+                    if (m_pool->m_shutdown && m_pool->m_queue.empty()) {
+                        break;
+                    }                    
+                    
                     // 取出任务队列中的元素
                     dequeued = m_pool->m_queue.dequeue(func);
                 }
