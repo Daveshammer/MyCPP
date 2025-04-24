@@ -8,7 +8,6 @@
 #include <thread>
 #include <utility>
 #include <vector>
-#include <atomic>
 
 // Thread safe implementation of a Queue using a std::queue
 template <typename T>
@@ -98,7 +97,7 @@ private:
             }
         }
     };
-    std::atomic_bool m_shutdown; // 线程池是否关闭
+    bool m_shutdown; // 线程池是否关闭
     SafeQueue<std::function<void()>> m_queue; // 执行函数安全队列，即任务队列
     std::vector<std::thread> m_threads; // 工作线程队列
     std::mutex m_conditional_mutex; // 线程休眠锁互斥变量
