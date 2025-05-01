@@ -7,8 +7,10 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "-std=c++2a",
                 "${file}",
+                "-std=c++2a",
+                // "-lssl", // for coro-awaitable.cpp
+                // "-lcrypto",
                 "-o",
                 // "${fileDirname}/${fileBasenameNoExtension}"
                 "${fileDirname}/a.out"
