@@ -59,7 +59,7 @@ public:
             bool was_locked = locked.load(std::memory_order_relaxed);
             if (!was_locked && locked.compare_exchange_weak(was_locked, true, std::memory_order_acquire))
                 break;
-                _mm_pause();
+            _mm_pause();
         }
     }
     void unlock()
